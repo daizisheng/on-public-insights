@@ -114,12 +114,7 @@ $$
 \begin{align*}
 & Pr(x=0|s=0) \\
 =& \frac{Pr(s=0|x=0) * Pr(x=0)}{ \displaystyle\sum_{k=0}^{n-1} Pr(s=0|x=k) * Pr(x=k)} \\
-=& \frac{\frac{3}{4} * \frac{1}{4}}{
-    \frac{3}{4}*\frac{1}{4} +
-    \frac{1}{4}*\frac{1}{4} +
-    \frac{3}{4}*\frac{1}{4} +
-    \frac{1}{4}*\frac{1}{4}
-} \\
+=& \frac{\frac{3}{4} * \frac{1}{4}}{\frac{3}{4}*\frac{1}{4} +\frac{1}{4}*\frac{1}{4} +\frac{3}{4}*\frac{1}{4} +\frac{1}{4}*\frac{1}{4} } \\
 =& \frac{3}{8}
 \end{align*}
 $$
