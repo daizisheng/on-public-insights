@@ -188,7 +188,7 @@ $$ \displaystyle\sum_{\alpha \in \{0,1\}^*} | prob( U(x) = \alpha) - prob(V(x) =
 
 ### 注
 
-$$
+$$`
 \begin{align*}
 & \displaystyle\sum_{\alpha \in \{0,1\}*} |prob(U(x) = \alpha) - prob(V(x) = \alpha) | \\
 =& \displaystyle\sum_{\alpha \in \{0,1\}^{|x|}} |prob(U(x) = \alpha) - prob(V(x) = \alpha) | \\
@@ -197,7 +197,7 @@ $$
 =& 2^{-|x| + 1} \\
 <& |x|^{-c}
 \end{align*}
-$$
+`$$
 
 
 
