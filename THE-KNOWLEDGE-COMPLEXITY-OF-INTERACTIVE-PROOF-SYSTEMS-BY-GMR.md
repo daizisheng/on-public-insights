@@ -255,11 +255,12 @@ $...$
 |-:|-:|-:|-
 | 0|0| $\frac{2}{p^2}$ | $\frac{2}{p^2}$
 | $p-1$ |0| $\frac{2}{p^2}$ | $\frac{2}{p^2}$
-| $`0<i<p-1`$ |0| $\frac{1}{p^2}$ | $\frac{2}{p^2}$
-| $`0<i<p-1`$ | $j=i$ | $\frac{2}{p^2}$ | $\frac{1}{p^2}$ 
+| $`0 < i < p-1`$ |0| $\frac{1}{p^2}$ | $\frac{2}{p^2}$
+| $`0 < i < p-1`$ | $j=i$ | $\frac{2}{p^2}$ | $\frac{1}{p^2}$ 
 | others | others | $\frac{1}{p^2}$ | $\frac{1}{p^2}$ 
 >
 > 则
+>
 > $$`
 \begin{align*}
 & \displaystyle\sum_{0 \leq i < p, 0 \leq j < p-1} |Pr(D_A = f_{ij}) - Pr(D_B = f_{ij}) | \\
