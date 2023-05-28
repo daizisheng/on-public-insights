@@ -276,16 +276,16 @@ $$ \displaystyle\sum_{\alpha \in \{0,1\}^*} | prob( U(x) = \alpha) - prob(V(x) =
 >
 >> 1. $d_{s=j}(x, x_s) = \displaystyle\sum_{i} |Pr(x=i) - Pr(x=i|s=j)|$
 >> 2. $d_{s'=j}(x,x_{s'}) = \displaystyle\sum_{i} |Pr(x=i) - Pr(x=i|s'=j)|$
->> 3. $d_{x=i}(s_x,s'_x) = \displaystyle\sum_{j} |Pr(s=j|x=i) - Pr(s'=j|x=i)|$
+>> 3. $`d_{x=i}(s_x,s'_x) = \displaystyle\sum_{j} |Pr(s=j|x=i) - Pr(s'=j|x=i)|`$
 >> 4. $x$ 和 $s$ 独立，等价于 $d_{s=j}(x,x_s) = 0$  对所有 $j$ 都成立
 >> 5. $x$ 和 $s'$ 独立，等价于 $d_{s'=j}(x,x_{s'}) = 0$  对所有 $j$ 都成立
->> 6. $s_x$ 和 $s'_x$ 同分布，等价于 $d_{x=i}(s_x,s'_x) = 0$ 
+>> 6. $s_x$ 和 $s'_x$ 同分布，等价于 $`d_{x=i}(s_x,s'_x) = 0`$ 
 >
 > 把上面的定义都改成几乎相等，得到
 >
 >> 7. $x$ 和 $s$ 几乎独立，等价于 $d_{s=j}(x,x_s) < \epsilon$  对所有 $j$ 都成立
 >> 8. $x$ 和 $s'$ 独立，等价于 $d_{s'=j}(x,x_{s'}) < \epsilon$  对所有 $j$ 都成立
->> 9. $s_x$ 和 $s'_x$ 同分布，等价于 $d_{x=i}(s_x,s'_x) < \epsilon$ 
+>> 9. $s_x$ 和 $s'_x$ 同分布，等价于 $`d_{x=i}(s_x,s'_x) < \epsilon`$ 
 >
 > 原来对零知识的定义中，依赖于
 >
