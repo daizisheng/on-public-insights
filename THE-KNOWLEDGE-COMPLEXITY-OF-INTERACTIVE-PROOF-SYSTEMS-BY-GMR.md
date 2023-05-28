@@ -162,12 +162,12 @@ $...$
     \displaystyle\sum_{k} Pr(s=j|x=k) * Pr(x=k)
 } \\
 =& \frac{Pr(s'=j|x=i) * Pr(x=i)}{
-    \displaystyle\sum_{k} Pr(s=j'|x=k) * Pr(x=k)
+    \displaystyle\sum_{k} Pr(s'=j|x=k) * Pr(x=k)
 } \\
 =& \frac{Pr(s'=j,x=i)}{
-    Pr(s=j')
+    Pr(s'=j)
 } \\
-=& Pr(x=i|s=j') \\
+=& Pr(x=i|s'=j) \\
 =& Pr(x=i)
 \end{align*}
 `$$ 
