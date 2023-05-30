@@ -455,6 +455,75 @@ $...$
 > 让我们指出上述定义的鲁棒性。在这个定义中，我们只给我们计算有界的“判断者”样本大小为 $1$ 。然而，这并不具限制性。我们注意到，下面两个说法是等价的。
 >> 1. 对于每个独立地根据分布 $U_x$ 生成的输入字符串（数量为 $|x|$ 的多项式），当 $C_x$ 被赋予这些输入时，接受的概率接近于使用 $V_x$ 时的接受概率。 
 >> 2. 两个随机变量族 $`\{U_x\}`$ 和 $`\{V_x\}`$ 在计算上是不可区分的（相对于大小为 $1$ 的样本）。
+>
+
+### 注
+>
+> 我们来简单推导一下上面这个原文注。
+>
+> 令 $`P(U,C,x)=p, P(V,C,x)=q,p>q`$ ，计算不可区分的意思是 $`\forall c, \exists n, |x|>n, have, |p-q| < |x|^{-c}`$ 。 现在有 $m$ （奇数）个样本，因此我们修改电路为：大多数原则。则我们需要的概率有:
+>
+> $$`
+\begin{align*}
+& TARGET \\
+=& |\displaystyle\sum_{i=(m+1)/2}^m \binom m i p^i (1-p)^{m-i} - \displaystyle\sum_{i=(m+1)/2}^m \binom m i q^i (1-q)^{m-i}| \\
+\le& \displaystyle\sum_{i=(m+1)/2}^m \binom m i * |p^i (1-p)^{m-i} - q^i (1-q)^{m-i}|\\
+\le& \displaystyle\sum_{i=(m+1)/2}^m m * |p^i (1-p)^{m-i} - q^i (1-q)^{m-i}| \\
+\le& \displaystyle\sum_{i=(m+1)/2}^m m * \max(\\
+& |p^{(m+1)/2} (1-p)^{(m-1)/2} - q^{(m+1)/2} (1-q)^{(m-1)/2}|, \\
+& |p^m - q^m|\\
+&) \\
+\end{align*}
+$$`
+>
+> 令 $`\delta = p-q \le 1`$
+>
+> $$`
+\begin{align*}
+& |p^m - q^m|\\
+=& |(q+\delta)^m - q^m| \\
+=& |\displaystyle\sum_{j=1}^m \binom m j q^{m-j} \delta^j| \\
+\le&  |\displaystyle\sum_{j=1}^m m \delta| \\
+\le& m^2 * \delta
+\end{align*}
+$$`
+>
+>
+> $$`
+\begin{align*}
+& |p^{(m+1)/2} (1-p)^{(m-1)/2} - q^{(m+1)/2} (1-q)^{(m-1)/2}|\\
+=&| \bigg(q^{(m+1)/2} + \\
+&(A:=\displaystyle\sum_{j=1}^{(m+1)/2} \binom {(m+1)/2} j q^{(m+1)/2-j} \delta^j) \bigg) * \\
+& \bigg( (1-q)^{(m-1)/2} + \\
+&(B:=\displaystyle\sum_{j=1}^{(m-1)/2} \binom {(m-1)/2} j (1-q)^{(m-1)/2-j} (-\delta)^j) \bigg) - \\
+& q^{(m+1)/2} (1-q)^{(m-1)/2}| \\
+=& |A * (1-q)^{(m-1)/2} + B * q^{(m+1)/2} + A*B| \\
+\le& |A| + |B| + |A| * |B| \\
+\le& |\displaystyle\sum_{j=1}^{(m+1)/2} \frac{m+1}{2}  \delta| + |\displaystyle\sum_{j=1}^{(m-1)/2} \frac{m-1}{2} \delta^j| + |A|*|B| \\
+\le& ((m+1)/2)^2 * \delta + ((m-1)/2)^2 * \delta + \\
+& ((m+1)/2)^2 * ((m-1)/2)^2 * \delta \\
+\le& 6*m^4 * \delta
+\end{align*}
+`$$
+>
+> 汇总为
+> $$`
+\begin{align*}
+& TARGET\\
+\le& \displaystyle\sum_{i=(m+1)/2}^m m * \max(
+    m^2 * \delta, 6*m^4 * \delta
+) \\
+\le& \displaystyle\sum_{i=(m+1)/2}^m m * 6*m^4 * \delta \\
+\le& \displaystyle\sum_{i=(m+1)/2}^m 6*m^5 * \delta \\
+=& (m-1)/2 * 6*m^5 * \delta \\
+\le& 6*m^6 *\delta \\
+<& m^7 * |x|^{-c} 
+\end{align*}
+`$$
+> 
+> 由于 $m$ 本身是 $|x|$ 的多项式，不妨设 $`m = |x|^d, d>0`$ 。容易看出，我们只需要选择 $c'=c+7+d$ ，我们就有 $`TARGET < |x|^{-c'}`$  ，从而完成了论证。
+>
+>
 
 ### 3.2 随机变量的可近似性
 
