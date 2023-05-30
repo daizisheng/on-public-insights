@@ -486,7 +486,7 @@ $...$
 \le&  |\displaystyle\sum_{j=1}^m m \delta| \\
 \le& m^2 * \delta
 \end{align*}
-$$`
+`$$
 >
 >
 > $$`
